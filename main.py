@@ -8,6 +8,8 @@
 
 import constant
 
+number_of_discounted_items = 3
+
 
 def add_items_to_dict(file_path):
     """Function that takes path of txt file as a parameter and returns a dictionary with key:value pair of every row
@@ -34,12 +36,12 @@ def calculate_total_price_of_cart_item(price_dict, quantity_dict):
     return dict
 
 
-def calculate_total_price_of_cart(cart_dict):
+def calculate_total(cart_dict):
     """Function that takes dictionary as a parameter and returns total sum of it's values"""
     total_price = 0.0
     for key in cart_dict:
         total_price += cart_dict[key]
-    return total_price
+    return round(total_price, 2)
 
 def sort_values(cart_dict):
     """Function that takes dictionary as a parameter and returns sorted dictionary by values"""
@@ -72,21 +74,43 @@ def reduce_price(most_expensive_dict, percentage):
     with new values"""
     dict = {}
     for key in most_expensive_dict:
-        dict[key] = most_expensive_dict[key] - (percentage * (most_expensive_dict[key])) / 100
+        dict[key] = round(((percentage * (most_expensive_dict[key])) / 100), 2)
     return dict
 
 
+def get_total_after_discount(total_before_discount, discount):
+    """Function that takes 2 floats as a parameters and returns subtracted value"""
+    return total_before_discount - discount
 
-items_dict = add_items_to_dict("prekes.txt")
-cart_dict = add_items_to_dict("krepselis.txt")
-total_cart_item_dict = calculate_total_price_of_cart_item(items_dict, cart_dict)
-total_cart_price = calculate_total_price_of_cart(total_cart_item_dict)
-sorted_total_cart_dict = sort_values(total_cart_item_dict)
-most_expensive_items_dict = get_most_expensive_items(sorted_total_cart_dict, 3)
 
-print(items_dict)
-print(cart_dict)
-print(total_cart_item_dict)
-print(total_cart_price)
-print(sorted_total_cart_dict)
-print(most_expensive_items_dict)
+def print_a_receipt():
+    """The main function for running the app"""
+    with open("cekis.txt", mode="w") as file:
+        file.write("===============PIRKIMO CEKIS=======================\n\n")
+        items_dict = add_items_to_dict("prekes.txt")
+        cart_dict = add_items_to_dict("krepselis.txt")
+        total_cart_item_dict = calculate_total_price_of_cart_item(items_dict, cart_dict)
+        for key in total_cart_item_dict:
+            file.write(f"{key} = {total_cart_item_dict[key]} Eur\n")
+        total_cart_price = calculate_total(total_cart_item_dict)
+        file.write("_" * 50)
+        file.write(f"\nSuma pries nuolaida {total_cart_price} Eur\n")
+        if total_cart_price > constant.TOTAL_FOR_DISCOUNT:
+            file.write("_" * 50)
+            file.write(f"\nJums priklauso {constant.DISCOUNT_PERCENTAGE} %  nuolaida {number_of_discounted_items} "
+                       f"\nbrangiausioms krepselio prekems:\n\n")
+            sorted_total_cart_dict = sort_values(total_cart_item_dict)
+            most_expensive_items_dict = get_most_expensive_items(sorted_total_cart_dict, number_of_discounted_items)
+            reduced_prices_dict = reduce_price(most_expensive_items_dict, constant.DISCOUNT_PERCENTAGE)
+            for key in reduced_prices_dict:
+                file.write(f"{key} = {reduced_prices_dict[key]} Eur\n")
+            file.write("\n")
+            file.write("_" * 50)
+            total_discount = calculate_total(reduced_prices_dict)
+            file.write(f"\n\nBendra nuolaidos suma: {total_discount} Eur\n")
+            final_price = get_total_after_discount(total_cart_price, total_discount)
+        file.write(f"\nGalutine mokama suma {final_price} Eur\n")
+
+
+print_a_receipt()
+

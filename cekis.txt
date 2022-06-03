@@ -1,0 +1,44 @@
+===============PIRKIMO CEKIS=======================
+
+Pork - Bacon, Sliced = 4.48 Eur
+Bread - French Baquette = 2.16 Eur
+Soup - Campbells Beef Noodle = 7.5 Eur
+Beer - Alexander Kieths, Pale Ale = 9.64 Eur
+Bread - Sour Sticks With Onion = 14.96 Eur
+Chips - Assorted = 10.64 Eur
+Pork - Smoked Back Bacon = 6.3 Eur
+Bacardi Limon = 12.11 Eur
+Mushroom - Trumpet, Dry = 2.51 Eur
+Pumpkin - Seed = 1.82 Eur
+Coconut - Shredded, Sweet = 3.39 Eur
+Beef - Eye Of Round = 22.54 Eur
+Beef Dry Aged Tenderloin Aaa = 19.12 Eur
+Cinnamon - Ground = 1.12 Eur
+Muffin - Blueberry Individual = 5.88 Eur
+Wine - Red, Gallo, Merlot = 25.88 Eur
+Bread - Roll, Soft White Round = 3.08 Eur
+Duck - Fat = 8.86 Eur
+Potatoes - Yukon Gold, 80 Ct = 2.88 Eur
+Bread - Hot Dog Buns = 3.82 Eur
+Lamb - Leg, Diced = 12.74 Eur
+Beef - Montreal Smoked Brisket = 12.54 Eur
+Vodka - Lemon, Absolut = 7.91 Eur
+Canadian Emmenthal = 7.18 Eur
+Cheese - Swiss Sliced = 9.96 Eur
+Turkey Tenderloin Frozen = 9.17 Eur
+Oysters - Smoked = 32.76 Eur
+__________________________________________________
+Suma pries nuolaida 260.95 Eur
+__________________________________________________
+Jums priklauso 15 %  nuolaida 3 
+brangiausioms krepselio prekems:
+
+Oysters - Smoked = 4.91 Eur
+Wine - Red, Gallo, Merlot = 3.88 Eur
+Beef - Eye Of Round = 3.38 Eur
+
+__________________________________________________
+
+Bendra nuolaidos suma: 12.17 Eur
+
+Galutine mokama suma 248.78 Eur

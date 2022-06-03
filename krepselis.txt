@@ -1,38 +1,27 @@
-Lid Coffeecup 12oz	_	4
-Ecolab Digiclean Mild Fm	_	1
-Dill - Primerba, Paste	_	1
 Pork - Bacon, Sliced	_	1
 Bread - French Baquette	_	2
 Soup - Campbells Beef Noodle	_	6
-Bandage - Fexible 1x3	_	1
 Beer - Alexander Kieths, Pale Ale	_	4
 Bread - Sour Sticks With Onion	_	2
-Nori Sea Weed	_	2
 Chips - Assorted	_	4
 Pork - Smoked Back Bacon	_	1
 Bacardi Limon	_	1
 Mushroom - Trumpet, Dry	_	1
 Pumpkin - Seed	_	1
-Squid - Tubes / Tenticles 10/20	_	2
 Coconut - Shredded, Sweet	_	1
 Beef - Eye Of Round	_	2
 Beef Dry Aged Tenderloin Aaa	_	2
 Cinnamon - Ground	_	1
 Muffin - Blueberry Individual	_	6
-Laundry - Bag Cloth	_	1
 Wine - Red, Gallo, Merlot	_	2
-Shrimp, Dried, Small / Lb	_	1
 Bread - Roll, Soft White Round	_	2
 Duck - Fat	_	1
-Lid Tray - 16in Dome	_	1
 Potatoes - Yukon Gold, 80 Ct	_	3
 Bread - Hot Dog Buns	_	2
 Lamb - Leg, Diced	_	2
 Beef - Montreal Smoked Brisket	_	2
 Vodka - Lemon, Absolut	_	1
 Canadian Emmenthal	_	2
-Dehydrated Kelp Kombo	_	1
 Cheese - Swiss Sliced	_	2
 Turkey Tenderloin Frozen	_	1
 Oysters - Smoked	_	12
-Mortadella	_	1
