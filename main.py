@@ -61,8 +61,19 @@ def get_most_expensive_items(sorted_dict, number_of_items):
     if number_of_items > len(sorted_dict):
         number_of_items = len(sorted_dict)
     for item in range(number_of_items):
-        print(j, keys[j], sorted_dict[keys[j]])
+        # adding items to a dictionary in descending order
+        dict[keys[j]] = sorted_dict[keys[j]]
         j -= 1
+    return dict
+
+
+def reduce_price(most_expensive_dict, percentage):
+    """Function that takes a dictionary as a parameter and reduces it's values by given percentage and returns a dict
+    with new values"""
+    dict = {}
+    for key in most_expensive_dict:
+        dict[key] = most_expensive_dict[key] - (percentage * (most_expensive_dict[key])) / 100
+    return dict
 
 
 
@@ -71,10 +82,11 @@ cart_dict = add_items_to_dict("krepselis.txt")
 total_cart_item_dict = calculate_total_price_of_cart_item(items_dict, cart_dict)
 total_cart_price = calculate_total_price_of_cart(total_cart_item_dict)
 sorted_total_cart_dict = sort_values(total_cart_item_dict)
-get_most_expensive_items(sorted_total_cart_dict, 3)
+most_expensive_items_dict = get_most_expensive_items(sorted_total_cart_dict, 3)
 
 print(items_dict)
 print(cart_dict)
 print(total_cart_item_dict)
 print(total_cart_price)
 print(sorted_total_cart_dict)
+print(most_expensive_items_dict)
