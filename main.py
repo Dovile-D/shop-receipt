@@ -15,25 +15,25 @@ def add_items_to_dict(file_path):
     """Function that takes path of txt file as a parameter and returns a dictionary with key:value pair of every row
     of that file"""
     with open(file_path) as file:
-        dict = {}
+        dictionary = {}
         for line in file:
             # extracting item and price values from a row
             key = line.rsplit('_', 1)[0].strip("\n").strip("\t")
             # separating price value from unnecessary symbols and changing it to a float:
             value = float((line.rsplit('_', 1)[1]).strip("\n").strip("\t").replace(",", "."))
-            dict[key] = value
-        return dict
+            dictionary[key] = value
+        return dictionary
 
 
 def calculate_total_price_of_cart_item(price_dict, quantity_dict):
     """Function that takes 2 dictionaries as parameters and returns a dictionary of overlapping keys from both as a
     key and and multiplication of both values as a value"""
-    dict = {}
+    dictionary = {}
     for key in price_dict:
         if key in quantity_dict:
             value = price_dict[key] * quantity_dict[key]
-            dict[key] = value
-    return dict
+            dictionary[key] = value
+    return dictionary
 
 
 def calculate_total(cart_dict):
@@ -43,19 +43,20 @@ def calculate_total(cart_dict):
         total_price += cart_dict[key]
     return round(total_price, 2)
 
+
 def sort_values(cart_dict):
     """Function that takes dictionary as a parameter and returns sorted dictionary by values"""
-    dict = {}
+    dictionary = {}
     sorted_keys = sorted(cart_dict, key=cart_dict.get)
     for i in sorted_keys:
-        dict[i] = cart_dict[i]
-    return dict
+        dictionary[i] = cart_dict[i]
+    return dictionary
 
 
 def get_most_expensive_items(sorted_dict, number_of_items):
     """Function that takes sorted dictionary and number as parameters and returns a dictionary of most expensive items.
     The length of this dictionary is equals to passed number"""
-    dict = {}
+    dictionary = {}
     # adding keys of dict to a list to get their indexes:
     keys = list(sorted_dict.keys())
     # dictionary is sorted ascending so
@@ -64,18 +65,18 @@ def get_most_expensive_items(sorted_dict, number_of_items):
         number_of_items = len(sorted_dict)
     for item in range(number_of_items):
         # adding items to a dictionary in descending order
-        dict[keys[j]] = sorted_dict[keys[j]]
+        dictionary[keys[j]] = sorted_dict[keys[j]]
         j -= 1
-    return dict
+    return dictionary
 
 
 def reduce_price(most_expensive_dict, percentage):
     """Function that takes a dictionary as a parameter and reduces it's values by given percentage and returns a dict
     with new values"""
-    dict = {}
+    dictionary = {}
     for key in most_expensive_dict:
-        dict[key] = round(((percentage * (most_expensive_dict[key])) / 100), 2)
-    return dict
+        dictionary[key] = round(((percentage * (most_expensive_dict[key])) / 100), 2)
+    return dictionary
 
 
 def get_total_after_discount(total_before_discount, discount):
@@ -113,4 +114,3 @@ def print_a_receipt():
 
 
 print_a_receipt()
-
